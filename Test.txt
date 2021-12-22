@@ -1,0 +1,91 @@
+Core  Java
+-----------
+Final, Finally, Finalize
+Restrict inheritance in java without final
+Transient and Volatile variables
+Thread and Process
+Demon thread
+try with resource
+How to make a collection as read-only
+How to make a collection as synchronized
+
+
+List<Integer> ls = new ArrayList<>();
+ls.add(1);
+ls.add(2);
+ls.add(3);
+ls.remove(2); //it will remove based on index.. so 3 will be removed
+
+ls.remove(new Integer(2)); //it will remove based on value.. which  is 2.
+
+Write code to print each string in array with no of times it presents.
+
+HashMap<String, Integer> map = new HashMap<>();
+
+Spring F/w
+----------
+Dependency Injection 
+Scope of Bean 
+Autowired
+Does spring provides thread safe
+
+Hibernate
+----------
+how do make a class immutable in Hibernate
+Lazy loading 
+States of an object 
+Which of the state object acquire primary key
+Difference b/w HQL and SQL
+
+HQL-Prgram
+public class Company{
+private Long Id;
+ private String CompanyName;
+ private String Address;
+ //Getters and setters
+}
+public class Employee{
+private Long Id;
+ private String companyId;
+ private String name;
+private Integer Age;
+ private String Address;
+ private Long Salary;
+ private Date StartDate;
+private Date EndDate;
+//Getters and setters
+}
+
+
+1) Get all employee name and age for company "Kyyba"
+2) to get Active employees  -- based on start date and end date
+
+SQL
+Union and union All 
+Delete, Drop and truncate table
+Primary Key and Unique key
+
+
+Table:
+Employee:
+
+ID,
+Company_id,
+NAME,
+Age
+,Address
+,Salary,
+Start_date,
+End_Date
+
+1) to get Active employees
+2) to get all employees as comma separated values
+
+select company.name, GROUP_CONCAT(employee.name) from company inner join employee on company.id=employee.company_id group by employee.company_id;
+
+GROUP_CONCAT(employee.name SEPARATOR'|') 
+
+Employee - id, name, dob
+Salary - id, emp_id, month, year, amount
+
+select name from Employee e left join salary s on s.emp_id= e.id and month=11 and year =2021 and s.id is null
